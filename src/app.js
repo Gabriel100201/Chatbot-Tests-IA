@@ -15,7 +15,7 @@ const main = async () => {
         flow
     })
 
-    initServer(botInstance)
+    initServer(botInstance.providerClass)
 }
 
 
