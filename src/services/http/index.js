@@ -1,6 +1,7 @@
 const express = require('express');
 const { createReadStream } = require('fs');
 const { join } = require('path');
+const { restartCCVClients } = require('../../helpers/addToCCVClients');
 
 const app = express();
 const PORT = process.env?.PORT ?? 3000;
@@ -9,6 +10,9 @@ const PORT = process.env?.PORT ?? 3000;
  * INICIO DEL SERVICIO EN EL PUERTO DEFINIDO || 3000
  */
 const initServer = (botInstance) => {
+
+  restartCCVClients()
+  
   app.get("/ready", (req, res) => {
     const query = req.query;
 

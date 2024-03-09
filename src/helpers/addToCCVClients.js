@@ -5,6 +5,18 @@ const CCVpath = path.join(__dirname, '../constants/CCVClients.json');
 
 const timeToRemove = 20000; // 20 segs
 
+const restartCCVClients = () => {
+  const emptyCCVClients = []
+  fs.writeFile(CCVpath, JSON.stringify(emptyCCVClients), "utf-8", (err) => {
+    if (err) {
+      console.log("Error al vaciar la lista de usuarios")
+    }
+    else {
+      console.log("Se reinició la lista de usuarios CCV")
+    }
+  })
+}
+
 const addToCCVClients = (ctx) => {
   const clientNumber = ctx.from;
 
@@ -33,4 +45,4 @@ const removeFromCCVClients = (clientNumber) => {
   }
 };
 
-module.exports = { addToCCVClients }
+module.exports = { addToCCVClients, restartCCVClients }
