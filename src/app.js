@@ -2,7 +2,7 @@ const BotWhatsapp = require('@bot-whatsapp/bot');
 const database = require('./database');
 const provider = require('./provider');
 const flow = require('./flow');
-const { initServer } = require('./services/http');
+const { initServer } = require('./services/start');
 
 /**
  * Funcion principal del bot

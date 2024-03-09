@@ -12,7 +12,6 @@ const openai = new OpenAI({
  * @param history 
  */
 const run = async (name, history) => {
-
     const promtp = generatePrompt(name)
     const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
@@ -33,7 +32,6 @@ const run = async (name, history) => {
 }
 
 const runDetermine = async (history) => {
-
     const promtp = generatePromptDetermine()
     const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
@@ -50,8 +48,6 @@ const runDetermine = async (history) => {
         frequency_penalty: 0,
         presence_penalty: 0,
     });
-    console.log(history);
-    console.log(response.choices[0].message.content);
     return response.choices[0].message.content
 }
 

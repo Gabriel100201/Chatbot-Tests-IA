@@ -31,7 +31,6 @@ module.exports = BotWhatsapp.addKeyword(BotWhatsapp.EVENTS.WELCOME)
         }
     })
     .addAction(async (ctx, { flowDynamic, state }) => {
-        if (CCVClients.includes(ctx.from)) return
         try{
             const newHistory = (state.getMyState()?.history ?? [])
             const name = ctx?.pushName ?? ''

@@ -5,7 +5,7 @@ const DATE_BASE = [
   `- Creación de manual de marca`,
 ].join("\n");
 
-/* const PROMPT_DETERMINE = `
+const PROMPT_DETERMINE = `
 Analiza la conversación entre el cliente (C) y el vendedor (V) para identificar si el cliente ya se decidió por adquirir un producto dentro de la {BASE_DE_DATOS}.
 
 Debes responder con una de los siguientes ID:
@@ -14,44 +14,15 @@ ID: "decidido" //si el cliente pide un presupuesto o si el cliente escribe algun
 
 Si el cliente o el vendedor no hablan de manera explícita sobre algun producto que se encuentre en la {BASE_DE_DATOS} entonces tu respuesta debe ser "unkown".
 Tu respuesta debe ser "decidido" solo cuando sepas que el cliente esta totalmente decidido por un producto especifico, y el ya sepa cuál.
+Tu respuesta debe ser "unknown" si el vendedor pregunta si está interesado en algún producto y el cliente afirma su interes.
 Tu respuesta debe ser solo una palabra, y esta debe ser el ID.
 
 BASE_DE_DATOS=[
     - Creación de pagina web,
     - Creación de chatbot,
-    - Creación de chatbot con IA,
     - Creación de e-commerce,
     - Creación de manual de marca,
-    - Creación de solución personalizada,
   ]
-
-`; */
-const PROMPT_DETERMINE = `
-Analiza la conversación entre el cliente (C) y el vendedor (V) para identificar si el cliente ya se decidió por adquirir un producto dentro de la {BASE_DE_DATOS}.
-
-Debes responder con una de los siguientes ID:
-ID: "unknown"
-ID: "decidido"
-
-Casos en los que debes responder "decidido":
-  - El cliente nombró un producto de manera explisita que se encuentra dentro de la {BASE_DE_DATOS}
-  - El cliente afirma que está interesado en un producto ofrecido previamente por el vendedor durante la conversación
-Casos en los que debes responder "unknown":
-  - El cliente esta haciendo preguntas
-  - El cliente no está decidido por ningun producto especificado en la {BASE_DE_DATOS}
-  - ACLARACIÓN: El cliente no tiene conocimiento de la {BASE_DE_DATOS}, entonces si durante la conversación no se habló de un producto dentro de la {BASE_DE_DATOS} tu respuesta debe ser "unknown"
-
-Solo deber responder una palabra, es decir, "decidido" o "unknown". ademas dime por que tomaste esa desición
-
-BASE_DE_DATOS=[
-    - Creación de pagina web,
-    - Creación de chatbot,
-    - Creación de chatbot con IA,
-    - Creación de e-commerce,
-    - Creación de manual de marca,
-    - Creación de solución personalizada,
-  ]
-
 `;
 
 const PROMPT = `
