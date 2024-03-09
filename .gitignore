@@ -1,4 +1,5 @@
 .env
 *.log
+bot.qr.png
 node_modules/
 bot_sessions/
