@@ -6,7 +6,7 @@ const CCVpath = path.join(__dirname, '../constants/CCVClients.json');
 const timeToRemove = 20000; // 20 segs
 
 const restartCCVClients = () => {
-  const emptyCCVClients = []
+  const emptyCCVClients = [""]
   fs.writeFile(CCVpath, JSON.stringify(emptyCCVClients), "utf-8", (err) => {
     if (err) {
       console.log("Error al vaciar la lista de usuarios")
